@@ -126,6 +126,36 @@ function ContactPage() {
           </button>
         </form>
       </div>
+
+      {/* FAQ */}
+      <div className="mt-14">
+        <h2 className="font-display text-2xl font-bold">Frequently Asked</h2>
+        <div className="mt-6 grid md:grid-cols-2 gap-4">
+          {[
+            {
+              q: "How quickly do you respond?",
+              a: "Usually within 24–48 hours via email or LinkedIn.",
+            },
+            {
+              q: "Do you tutor online?",
+              a: "Yes — online sessions for 9th & 10th grade students are available.",
+            },
+            {
+              q: "Are you open to collaborations?",
+              a: "Absolutely — food projects, photography, and learning content.",
+            },
+            {
+              q: "Where are you based?",
+              a: "Originally Gaya, Bihar — currently studying at LPU, Punjab.",
+            },
+          ].map((f) => (
+            <div key={f.q} className="glass-card rounded-2xl p-5">
+              <p className="font-semibold">{f.q}</p>
+              <p className="mt-1.5 text-sm text-muted-foreground">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </PageShell>
   );
 }
