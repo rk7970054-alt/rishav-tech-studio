@@ -37,6 +37,15 @@ export const Route = createRootRoute({
         content:
           "Portfolio of Rishav Kumar — BTech Food Technology undergraduate, educator, and photographer exploring the science of food.",
       },
+      { property: "og:title", content: "Rishav Kumar — Food Technology Student & Creative" },
+      { name: "twitter:title", content: "Rishav Kumar — Food Technology Student & Creative" },
+      { name: "description", content: "Food Science Explorer showcases a BTech Food Technology undergraduate's skills, projects, and experience." },
+      { property: "og:description", content: "Food Science Explorer showcases a BTech Food Technology undergraduate's skills, projects, and experience." },
+      { name: "twitter:description", content: "Food Science Explorer showcases a BTech Food Technology undergraduate's skills, projects, and experience." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/37cacc77-8c16-499e-acaf-ab8901f66c17/id-preview-e71f657f--59d61555-f1dd-4e5d-aaa5-ba4c18f8559a.lovable.app-1777214750968.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/37cacc77-8c16-499e-acaf-ab8901f66c17/id-preview-e71f657f--59d61555-f1dd-4e5d-aaa5-ba4c18f8559a.lovable.app-1777214750968.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
