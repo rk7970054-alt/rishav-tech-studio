@@ -93,6 +93,67 @@ function SkillsPage() {
           </div>
         ))}
       </div>
+
+      {/* Tools / Toolkit */}
+      <div className="mt-14">
+        <h2 className="font-display text-2xl font-bold">My Toolkit</h2>
+        <p className="text-sm text-muted-foreground mt-1">
+          Instruments, tools and topics I work with regularly.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-2">
+          {[
+            "Burette",
+            "Pipette",
+            "Distillation Setup",
+            "pH Meter",
+            "DSLR Camera",
+            "Lightroom",
+            "Photoshop",
+            "MS Office",
+            "Notion",
+            "LinkedIn Learning",
+            "Food Chemistry",
+            "Nutrition Basics",
+          ].map((t) => (
+            <span
+              key={t}
+              className="text-xs rounded-full border border-primary/20 bg-primary/5 text-foreground/90 px-3 py-1.5 hover:border-primary/50 hover:bg-primary/10 transition-colors"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Currently learning */}
+      <div className="mt-14 grid md:grid-cols-3 gap-6">
+        {[
+          {
+            title: "Currently Learning",
+            items: ["Advanced Food Chemistry", "Nutrition Science", "Lab Documentation"],
+          },
+          {
+            title: "Exploring Next",
+            items: ["Sustainable Packaging", "Food Microbiology", "Sensory Evaluation"],
+          },
+          {
+            title: "Long-term Goals",
+            items: ["R&D in Food Industry", "Published Research", "Mentoring Programs"],
+          },
+        ].map((c) => (
+          <div key={c.title} className="glass-card rounded-2xl p-6">
+            <h3 className="font-display text-lg font-bold text-gradient">{c.title}</h3>
+            <ul className="mt-4 space-y-2 text-sm text-foreground/80">
+              {c.items.map((i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="mt-2 h-1 w-1 rounded-full bg-primary shrink-0" />
+                  {i}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </PageShell>
   );
 }
