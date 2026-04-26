@@ -11,7 +11,7 @@ import {
   BookOpen,
   Quote,
 } from "lucide-react";
-import portrait from "../assets/rishav-portrait.jpg";
+import portrait from "../assets/rishav-photo.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
