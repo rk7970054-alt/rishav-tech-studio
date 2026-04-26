@@ -90,6 +90,42 @@ function ServicesPage() {
           Let's Connect <ArrowRight size={16} />
         </Link>
       </div>
+
+      {/* Process */}
+      <div className="mt-14">
+        <h2 className="font-display text-2xl font-bold">How we'll work together</h2>
+        <p className="text-sm text-muted-foreground mt-1">
+          A simple, transparent process from first message to final delivery.
+        </p>
+        <div className="mt-6 grid md:grid-cols-4 gap-4">
+          {[
+            { n: "01", t: "Connect", d: "Share your goals via the contact form or email." },
+            { n: "02", t: "Plan", d: "We agree on scope, timeline and expectations." },
+            { n: "03", t: "Deliver", d: "Focused execution — sessions, shoots or reports." },
+            { n: "04", t: "Review", d: "Feedback, refinement and final hand-off." },
+          ].map((s) => (
+            <div key={s.n} className="glass-card rounded-2xl p-5">
+              <p className="font-display text-2xl font-bold text-gradient">{s.n}</p>
+              <p className="mt-2 font-semibold">{s.t}</p>
+              <p className="mt-1 text-xs text-muted-foreground">{s.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Why work with me */}
+      <div className="mt-14 grid md:grid-cols-3 gap-6">
+        {[
+          { t: "Student-friendly", d: "Affordable pricing with a personal, patient approach." },
+          { t: "Detail-oriented", d: "Care put into every report, photo and lesson." },
+          { t: "Reliable", d: "Clear communication and on-time delivery, always." },
+        ].map((w) => (
+          <div key={w.t} className="glass-card rounded-2xl p-6">
+            <h3 className="font-display text-lg font-bold text-gradient">{w.t}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{w.d}</p>
+          </div>
+        ))}
+      </div>
     </PageShell>
   );
 }
