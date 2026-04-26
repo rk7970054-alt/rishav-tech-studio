@@ -87,6 +87,39 @@ function ExperiencePage() {
           </div>
         ))}
       </div>
+
+      {/* Stats band */}
+      <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { v: "20+", l: "Students mentored" },
+          { v: "3 mo", l: "Studio experience" },
+          { v: "10+", l: "Lab experiments" },
+          { v: "1", l: "Scholarship awarded" },
+        ].map((s) => (
+          <div key={s.l} className="glass-card rounded-2xl p-5 text-center">
+            <p className="font-display text-3xl font-bold text-gradient">{s.v}</p>
+            <p className="mt-1 text-xs text-muted-foreground">{s.l}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Key takeaways */}
+      <div className="mt-14 grid md:grid-cols-2 gap-6">
+        <div className="glass-card rounded-2xl p-6">
+          <h3 className="font-display text-lg font-bold">What teaching taught me</h3>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Patience, structure, and the power of explaining things simply. Teaching forced me
+            to truly understand — not just memorize.
+          </p>
+        </div>
+        <div className="glass-card rounded-2xl p-6">
+          <h3 className="font-display text-lg font-bold">What the studio taught me</h3>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Light shapes everything. Composition is intentional. Good work needs both
+            technical care and creative bravery.
+          </p>
+        </div>
+      </div>
     </PageShell>
   );
 }

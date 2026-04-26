@@ -1,5 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Download, Mail, Linkedin, Award, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  Download,
+  Mail,
+  Linkedin,
+  Award,
+  Sparkles,
+  FlaskConical,
+  Camera,
+  BookOpen,
+  Quote,
+} from "lucide-react";
 import portrait from "../assets/rishav-portrait.jpg";
 
 export const Route = createFileRoute("/")({
@@ -124,6 +135,104 @@ function HomePage() {
               <p className="mt-1 text-xs text-muted-foreground">{s.l}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* What I do */}
+      <section className="relative mx-auto max-w-6xl px-4 py-16">
+        <div className="max-w-2xl">
+          <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+            What I do
+          </span>
+          <h2 className="mt-4 font-display text-3xl md:text-4xl font-bold">
+            Three worlds, <span className="text-gradient">one curious mind</span>
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            I move between the lab bench, the classroom, and the camera — connecting science,
+            communication, and craft.
+          </p>
+        </div>
+
+        <div className="mt-10 grid md:grid-cols-3 gap-5">
+          {[
+            {
+              icon: FlaskConical,
+              title: "Food Science",
+              desc: "Lab techniques, food chemistry and sustainable food systems.",
+              href: "/skills",
+            },
+            {
+              icon: BookOpen,
+              title: "Education",
+              desc: "Tutoring 9th & 10th grade students with patience and clarity.",
+              href: "/services",
+            },
+            {
+              icon: Camera,
+              title: "Photography",
+              desc: "Composition-led visual storytelling from studio experience.",
+              href: "/projects",
+            },
+          ].map((c) => (
+            <Link
+              key={c.title}
+              to={c.href}
+              className="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1 hover:border-primary/40"
+            >
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+                <c.icon size={20} />
+              </div>
+              <h3 className="mt-5 font-display text-lg font-bold">{c.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
+              <span className="mt-4 inline-flex items-center gap-1 text-sm text-primary">
+                Learn more
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured quote */}
+      <section className="relative mx-auto max-w-6xl px-4 py-16">
+        <div className="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+          <div className="absolute -top-16 -right-16 h-64 w-64 rounded-full bg-primary/30 blur-3xl" />
+          <Quote className="text-primary" size={36} />
+          <p className="mt-5 font-display text-2xl md:text-3xl leading-snug max-w-3xl">
+            "Every great discovery in food science begins with a small, careful question — and
+            the patience to follow it through."
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">— A guiding principle</p>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative mx-auto max-w-6xl px-4 py-16">
+        <div className="glass-card rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+          <div className="absolute inset-0 animated-mesh opacity-20" />
+          <div className="relative">
+            <h2 className="font-display text-3xl md:text-4xl font-bold">
+              Let's <span className="text-gradient">create something</span> together
+            </h2>
+            <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
+              Open to collaborations, tutoring, photography projects and learning
+              opportunities.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3 justify-center">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] hover:scale-105 transition-transform"
+              >
+                Get in touch <ArrowRight size={16} />
+              </Link>
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 rounded-xl glass-card px-6 py-3 text-sm font-semibold text-foreground hover:text-primary"
+              >
+                Read my story
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

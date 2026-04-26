@@ -110,6 +110,71 @@ function AboutPage() {
           ))}
         </div>
       </div>
+
+      {/* Values */}
+      <div className="mt-14">
+        <h2 className="font-display text-2xl font-bold mb-6">What I Value</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { v: "Integrity", d: "Honest work, careful methods, transparent results." },
+            { v: "Curiosity", d: "Asking better questions, not just finding answers." },
+            { v: "Sustainability", d: "Mindful of impact — on people and planet." },
+            { v: "Craft", d: "Pride in details, from a lab report to a photograph." },
+          ].map((x) => (
+            <div key={x.v} className="glass-card rounded-2xl p-5">
+              <p className="font-display text-lg font-bold text-gradient">{x.v}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{x.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Languages & Interests */}
+      <div className="mt-14 grid md:grid-cols-2 gap-6">
+        <div className="glass-card rounded-2xl p-6">
+          <h3 className="font-display text-lg font-bold">Languages</h3>
+          <div className="mt-4 space-y-3">
+            {[
+              { l: "English", v: 80 },
+              { l: "Hindi", v: 95 },
+            ].map((lang) => (
+              <div key={lang.l}>
+                <div className="flex justify-between text-sm">
+                  <span>{lang.l}</span>
+                  <span className="text-muted-foreground">{lang.v}%</span>
+                </div>
+                <div className="mt-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                  <div
+                    className="h-full rounded-full bg-[var(--gradient-primary)]"
+                    style={{ width: `${lang.v}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="glass-card rounded-2xl p-6">
+          <h3 className="font-display text-lg font-bold">Beyond Studies</h3>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {[
+              "Photography",
+              "Reading",
+              "Sustainable Cooking",
+              "Mentoring",
+              "Nature Walks",
+              "Self-learning",
+            ].map((t) => (
+              <span
+                key={t}
+                className="text-xs rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-foreground/80"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
     </PageShell>
   );
 }

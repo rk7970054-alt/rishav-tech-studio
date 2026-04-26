@@ -1,6 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "../components/PageShell";
-import { Leaf, Camera, ExternalLink, Award } from "lucide-react";
+import { Leaf, Camera, ExternalLink, Award, Quote } from "lucide-react";
+import photo1 from "../assets/photo-1.jpg";
+import photo2 from "../assets/photo-2.jpg";
+import photo3 from "../assets/photo-3.jpg";
+import photo4 from "../assets/photo-4.jpg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -116,6 +120,48 @@ function ProjectsPage() {
             More projects, lab reports and photography work coming soon as the journey unfolds.
           </p>
         </div>
+      </div>
+
+      {/* Photography gallery */}
+      <h2 className="mt-14 font-display text-2xl font-bold">Photography Gallery</h2>
+      <p className="text-sm text-muted-foreground mt-1">
+        A glimpse into my visual exploration — from food to abstract textures.
+      </p>
+      <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+        {[
+          { src: photo1, alt: "Fresh produce composition" },
+          { src: photo2, alt: "Laboratory titration" },
+          { src: photo3, alt: "Macro water droplets" },
+          { src: photo4, alt: "Aloe vera close-up" },
+        ].map((p) => (
+          <div
+            key={p.alt}
+            className="group relative aspect-square overflow-hidden rounded-2xl glass-card"
+          >
+            <img
+              src={p.src}
+              alt={p.alt}
+              loading="lazy"
+              width={800}
+              height={800}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+              <p className="text-xs text-foreground">{p.alt}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Testimonial */}
+      <div className="mt-14 glass-card rounded-3xl p-8 md:p-10 relative overflow-hidden">
+        <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-primary/30 blur-3xl" />
+        <Quote className="text-primary" size={28} />
+        <p className="mt-4 font-display text-xl md:text-2xl leading-snug max-w-3xl">
+          "Rishav explains complex chapters in a way that finally makes them click. His patience
+          and clarity made a real difference in my preparation."
+        </p>
+        <p className="mt-4 text-sm text-muted-foreground">— A 10th grade student</p>
       </div>
     </PageShell>
   );
