@@ -11,7 +11,7 @@ import {
   BookOpen,
   Quote,
 } from "lucide-react";
-import portrait from "../assets/rishav-portrait.jpg";
+import portrait from "../assets/rishav-photo.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -106,10 +106,10 @@ function HomePage() {
             <div className="relative glass-card rounded-3xl p-3 animate-float">
               <img
                 src={portrait}
-                alt="Rishav Kumar portrait"
-                width={896}
-                height={1024}
-                className="rounded-2xl w-full h-auto object-cover"
+                alt="Rishav Kumar"
+                width={996}
+                height={800}
+                className="rounded-2xl w-full h-auto object-cover aspect-[5/4]"
               />
               <div className="absolute -bottom-4 -left-4 glass-card rounded-2xl px-4 py-3 flex items-center gap-3">
                 <Award className="text-primary" size={20} />
