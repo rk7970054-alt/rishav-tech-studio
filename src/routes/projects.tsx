@@ -1,10 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "../components/PageShell";
 import { Leaf, Camera, ExternalLink, Award, Quote } from "lucide-react";
-import photo1 from "../assets/photo-1.jpg";
-import photo2 from "../assets/photo-2.jpg";
-import photo3 from "../assets/photo-3.jpg";
-import photo4 from "../assets/photo-4.jpg";
+import photo1 from "../assets/gallery/photo-1.jpg";
+import photo2 from "../assets/gallery/photo-2.jpg";
+import photo3 from "../assets/gallery/photo-3.jpg";
+import photo4 from "../assets/gallery/photo-4.jpg";
+import photo5 from "../assets/gallery/photo-5.jpg";
+import photo6 from "../assets/gallery/photo-6.jpg";
+import photo7 from "../assets/gallery/photo-7.jpg";
+import photo8 from "../assets/gallery/photo-8.jpg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -129,10 +133,14 @@ function ProjectsPage() {
       </p>
       <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
         {[
-          { src: photo1, alt: "Fresh produce composition" },
-          { src: photo2, alt: "Laboratory titration" },
-          { src: photo3, alt: "Macro water droplets" },
-          { src: photo4, alt: "Aloe vera close-up" },
+          { src: photo1, alt: "Photography by Rishav Kumar — frame 1" },
+          { src: photo2, alt: "Photography by Rishav Kumar — frame 2" },
+          { src: photo3, alt: "Photography by Rishav Kumar — frame 3" },
+          { src: photo4, alt: "Photography by Rishav Kumar — frame 4" },
+          { src: photo5, alt: "Photography by Rishav Kumar — frame 5" },
+          { src: photo6, alt: "Photography by Rishav Kumar — frame 6" },
+          { src: photo7, alt: "Photography by Rishav Kumar — frame 7" },
+          { src: photo8, alt: "Photography by Rishav Kumar — frame 8" },
         ].map((p) => (
           <div
             key={p.alt}
