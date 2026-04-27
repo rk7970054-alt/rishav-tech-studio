@@ -3,6 +3,7 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import appCss from "../styles.css?url";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { CustomCursor } from "../components/CustomCursor";
 
 function NotFoundComponent() {
   return (
@@ -77,6 +78,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <>
+      <CustomCursor />
       <Navbar />
       <main>
         <Outlet />
