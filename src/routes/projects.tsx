@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "../components/PageShell";
 import { Leaf, Camera, ExternalLink, Award, Quote } from "lucide-react";
+import aloeVeraCandy from "../assets/aloe-vera-candy.jpg";
 import photo1 from "../assets/gallery/photo-1.jpg";
 import photo2 from "../assets/gallery/photo-2.jpg";
 import photo3 from "../assets/gallery/photo-3.jpg";
@@ -43,9 +44,17 @@ function ProjectsPage() {
       {/* Projects */}
       <div className="grid md:grid-cols-2 gap-6">
         <article className="group glass-card rounded-2xl overflow-hidden">
-          <div className="h-48 relative animated-mesh">
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-            <Leaf className="absolute bottom-4 left-4 text-primary" size={32} />
+          <div className="h-48 relative overflow-hidden">
+            <img
+              src={aloeVeraCandy}
+              alt="Aloe Vera Candy — food processing project by Rishav Kumar"
+              loading="lazy"
+              width={1280}
+              height={768}
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+            <Leaf className="absolute bottom-4 left-4 text-primary drop-shadow-lg" size={32} />
           </div>
           <div className="p-6">
             <span className="text-xs uppercase tracking-wider text-primary">Food Processing</span>
