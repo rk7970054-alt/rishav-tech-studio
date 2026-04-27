@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "../components/PageShell";
 import { Sparkles, AlertTriangle, Lightbulb, ShieldAlert } from "lucide-react";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const _unusedIcons = { Sparkles, AlertTriangle, Lightbulb, ShieldAlert };
 
 export const Route = createFileRoute("/swot")({
   head: () => ({
