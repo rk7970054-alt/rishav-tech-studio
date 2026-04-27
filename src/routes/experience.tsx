@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "../components/PageShell";
-import { GraduationCap, Camera, FlaskConical, Trophy } from "lucide-react";
+import { GraduationCap, Camera, FlaskConical, Trophy, Clock, ExternalLink } from "lucide-react";
 
 export const Route = createFileRoute("/experience")({
   head: () => ({
@@ -108,21 +108,50 @@ function ExperiencePage() {
         <h2 className="font-display text-2xl font-bold mb-6 flex items-center gap-2">
           <Trophy className="text-primary" /> Achievements
         </h2>
-        <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
-          <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-primary/30 blur-3xl" />
-          <div className="flex items-start gap-4">
-            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
-              <Trophy size={20} />
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
+            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-primary/30 blur-3xl" />
+            <div className="flex items-start gap-4">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+                <Trophy size={20} />
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wider text-primary">2019</p>
+                <h3 className="mt-1 font-display text-lg font-bold">
+                  Maths Olympiad — 1st Prize
+                </h3>
+                <p className="mt-2 text-sm text-foreground/80">
+                  Won first prize in the Maths Olympiad in 2019 — an early recognition of
+                  analytical thinking, problem-solving, and consistent effort.
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="text-xs uppercase tracking-wider text-primary">2019</p>
-              <h3 className="mt-1 font-display text-lg font-bold">
-                Maths Olympiad — 1st Prize
-              </h3>
-              <p className="mt-2 text-sm text-foreground/80">
-                Won first prize in the Maths Olympiad in 2019 — an early recognition of
-                analytical thinking, problem-solving, and consistent effort.
-              </p>
+          </div>
+
+          <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
+            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-accent/30 blur-3xl" />
+            <div className="flex items-start gap-4">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+                <Clock size={20} />
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wider text-primary">Certification</p>
+                <h3 className="mt-1 font-display text-lg font-bold">
+                  Time Management Skills
+                </h3>
+                <p className="mt-2 text-sm text-foreground/80">
+                  Completed a Time Management course focused on prioritization,
+                  productivity, and balancing academics with creative pursuits.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-accent transition-colors"
+                >
+                  View certificate <ExternalLink size={14} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
