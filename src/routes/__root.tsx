@@ -4,6 +4,7 @@ import appCss from "../styles.css?url";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { CustomCursor } from "../components/CustomCursor";
+import { ParticleBackground } from "../components/ParticleBackground";
 
 function NotFoundComponent() {
   return (
@@ -79,8 +80,9 @@ function RootComponent() {
   return (
     <>
       <CustomCursor />
+      <ParticleBackground />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Outlet />
       </main>
       <Footer />
