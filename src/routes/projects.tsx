@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "../components/PageShell";
-import { Leaf, Camera, ExternalLink, Award, Quote } from "lucide-react";
+import { Leaf, Camera, ExternalLink, Award, Quote, Users } from "lucide-react";
 import aloeVeraCandy from "../assets/aloe-vera-candy.jpg";
+import photographyCover from "../assets/photography-cover.jpg";
 import photo1 from "../assets/gallery/photo-1.jpg";
 import photo2 from "../assets/gallery/photo-2.jpg";
 import photo3 from "../assets/gallery/photo-3.jpg";
@@ -63,6 +64,10 @@ function ProjectsPage() {
               A collaborative food processing project focused on innovation and practical
               learning — exploring formulation, texture, and shelf-life.
             </p>
+            <div className="mt-3 flex items-center gap-2 text-xs text-foreground/70">
+              <Users size={14} className="text-primary" />
+              <span>Collaborated with my friend on this project.</span>
+            </div>
             <div className="mt-4 flex flex-wrap gap-2">
               {["Collaboration", "Formulation", "Innovation"].map((t) => (
                 <span
@@ -77,9 +82,17 @@ function ProjectsPage() {
         </article>
 
         <article className="group glass-card rounded-2xl overflow-hidden">
-          <div className="h-48 relative bg-gradient-to-br from-primary/40 via-accent/30 to-background">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,white_0,transparent_40%)] opacity-20" />
-            <Camera className="absolute bottom-4 left-4 text-foreground" size={32} />
+          <div className="h-48 relative overflow-hidden">
+            <img
+              src={photographyCover}
+              alt="Photography project cover — mountain landscape at golden hour by Rishav Kumar"
+              loading="lazy"
+              width={1280}
+              height={768}
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+            <Camera className="absolute bottom-4 left-4 text-foreground drop-shadow-lg" size={32} />
           </div>
           <div className="p-6">
             <span className="text-xs uppercase tracking-wider text-primary">Creative</span>
