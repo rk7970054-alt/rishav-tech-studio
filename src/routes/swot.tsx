@@ -134,19 +134,43 @@ function SwotPage() {
       }
       intro="An honest self-assessment — strengths, weaknesses, opportunities, and threats — to guide my growth."
     >
+      {/* Quadrant summary chips */}
+      <div className="mb-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+        {quadrants.map((q) => (
+          <div
+            key={`chip-${q.key}`}
+            className={`glass-card rounded-xl p-4 border ${q.border} bg-gradient-to-br ${q.accent}`}
+          >
+            <div className="flex items-center gap-2">
+              <div
+                className={`grid h-8 w-8 place-items-center rounded-lg border ${q.chip}`}
+              >
+                <q.icon size={14} />
+              </div>
+              <div>
+                <p className="font-display text-sm font-semibold">{q.label}</p>
+                <p className="text-[11px] text-muted-foreground">
+                  {q.items.length} {q.items.length === 1 ? "point" : "points"}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Tabular SWOT */}
       <div className="glass-card overflow-hidden rounded-2xl">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-white/10 bg-white/5">
-                <th className="w-40 px-4 py-3 text-left font-display text-xs uppercase tracking-wider text-muted-foreground">
+                <th className="w-44 px-5 py-4 text-left font-display text-xs uppercase tracking-wider text-muted-foreground">
                   Category
                 </th>
-                <th className="px-4 py-3 text-left font-display text-xs uppercase tracking-wider text-muted-foreground">
+                <th className="w-56 px-5 py-4 text-left font-display text-xs uppercase tracking-wider text-muted-foreground">
                   Point
                 </th>
-                <th className="px-4 py-3 text-left font-display text-xs uppercase tracking-wider text-muted-foreground">
+                <th className="px-5 py-4 text-left font-display text-xs uppercase tracking-wider text-muted-foreground">
                   Description
                 </th>
               </tr>
@@ -156,12 +180,12 @@ function SwotPage() {
                 q.items.map((item, idx) => (
                   <tr
                     key={`${q.key}-${idx}`}
-                    className="border-b border-white/5 last:border-0 transition-colors hover:bg-white/[0.03]"
+                    className="border-b border-white/5 last:border-0 transition-colors hover:bg-white/[0.04]"
                   >
                     {idx === 0 && (
                       <td
                         rowSpan={q.items.length}
-                        className={`px-4 py-4 align-top border-r border-white/10 bg-gradient-to-b ${q.accent}`}
+                        className={`px-5 py-5 align-top border-r border-white/10 bg-gradient-to-b ${q.accent}`}
                       >
                         <div className="flex flex-col gap-2">
                           <div
@@ -170,16 +194,16 @@ function SwotPage() {
                             <q.icon size={14} />
                             {q.label}
                           </div>
-                          <span className="text-xs text-muted-foreground">
+                          <span className="text-[11px] text-muted-foreground">
                             {q.items.length} {q.items.length === 1 ? "point" : "points"}
                           </span>
                         </div>
                       </td>
                     )}
-                    <td className="px-4 py-4 align-top font-medium text-foreground whitespace-nowrap">
+                    <td className="px-5 py-5 align-top font-medium text-foreground">
                       {item.title}
                     </td>
-                    <td className="px-4 py-4 align-top text-muted-foreground">
+                    <td className="px-5 py-5 align-top text-muted-foreground leading-relaxed">
                       {item.desc}
                     </td>
                   </tr>
@@ -189,6 +213,11 @@ function SwotPage() {
           </table>
         </div>
       </div>
+
+      {/* Closing note */}
+      <p className="mt-6 text-center text-xs text-muted-foreground">
+        Updated regularly as I grow, learn, and take on new challenges.
+      </p>
 
     </PageShell>
   );
