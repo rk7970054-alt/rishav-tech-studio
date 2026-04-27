@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "../components/PageShell";
 import { GraduationCap, MapPin, Sparkles, Award, Target, Briefcase, Rocket } from "lucide-react";
+import mbaCover from "../assets/mba-cover.jpg";
+import businessCover from "../assets/business-cover.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -120,27 +122,51 @@ function AboutPage() {
           Looking beyond the BTech — combining technical expertise with business acumen.
         </p>
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
-            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground">
-              <Briefcase size={20} />
+          <div className="glass-card rounded-2xl overflow-hidden relative group">
+            <div className="h-44 relative overflow-hidden">
+              <img
+                src={mbaCover}
+                alt="MBA goal cover — graduation cap on books with city skyline"
+                loading="lazy"
+                width={1280}
+                height={768}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
             </div>
-            <h3 className="mt-4 font-display text-lg font-bold">MBA</h3>
-            <p className="mt-2 text-sm text-foreground/80">
-              Pursue an MBA to strengthen my understanding of management, strategy, and
-              leadership — bridging food technology with business.
-            </p>
+            <div className="p-6 relative">
+              <div className="absolute -top-6 left-6 grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+                <Briefcase size={20} />
+              </div>
+              <h3 className="mt-4 font-display text-lg font-bold">MBA</h3>
+              <p className="mt-2 text-sm text-foreground/80">
+                Pursue an MBA to strengthen my understanding of management, strategy, and
+                leadership — bridging food technology with business.
+              </p>
+            </div>
           </div>
-          <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
-            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-accent/20 blur-3xl" />
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground">
-              <Rocket size={20} />
+          <div className="glass-card rounded-2xl overflow-hidden relative group">
+            <div className="h-44 relative overflow-hidden">
+              <img
+                src={businessCover}
+                alt="Future business venture cover — modern food product workspace"
+                loading="lazy"
+                width={1280}
+                height={768}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
             </div>
-            <h3 className="mt-4 font-display text-lg font-bold">Start My Own Business</h3>
-            <p className="mt-2 text-sm text-foreground/80">
-              Launch my own venture in the food industry — focused on innovative,
-              sustainable, and health-conscious products that make a real impact.
-            </p>
+            <div className="p-6 relative">
+              <div className="absolute -top-6 left-6 grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+                <Rocket size={20} />
+              </div>
+              <h3 className="mt-4 font-display text-lg font-bold">Start My Own Business</h3>
+              <p className="mt-2 text-sm text-foreground/80">
+                Launch my own venture in the food industry — focused on innovative,
+                sustainable, and health-conscious products that make a real impact.
+              </p>
+            </div>
           </div>
         </div>
       </div>
