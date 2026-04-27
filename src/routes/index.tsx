@@ -87,7 +87,8 @@ function HomePage() {
                 href="mailto:rk7970054@gmail.com"
                 className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
               >
-                <Mail size={16} /> rk7970054@gmail.com
+                <Mail size={16} />
+                <span>rk7970054@gmail.com</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/rishav-kumar-83b090374"

@@ -190,41 +190,6 @@ function SwotPage() {
         </div>
       </div>
 
-      {/* Quadrant view */}
-      <div className="mt-12">
-        <h2 className="font-display text-2xl font-bold">Quadrant view</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          The same analysis presented in the classic 2×2 SWOT layout.
-        </p>
-        <div className="mt-6 grid md:grid-cols-2 gap-5">
-          {quadrants.map((q) => (
-            <div
-              key={q.key}
-              className={`glass-card rounded-2xl p-6 border ${q.border} bg-gradient-to-br ${q.accent}`}
-            >
-              <div className="flex items-center gap-3">
-                <div
-                  className={`grid h-10 w-10 place-items-center rounded-xl border ${q.chip}`}
-                >
-                  <q.icon size={18} />
-                </div>
-                <h3 className="font-display text-lg font-bold">{q.label}</h3>
-              </div>
-              <ul className="mt-4 space-y-3">
-                {q.items.map((item) => (
-                  <li key={item.title} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/60" />
-                    <div>
-                      <p className="font-semibold text-foreground">{item.title}</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">{item.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
     </PageShell>
   );
 }

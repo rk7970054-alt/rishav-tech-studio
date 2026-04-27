@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "../components/PageShell";
-import { FlaskConical, Camera, Users, Code, Eye, MessageSquare } from "lucide-react";
+import { FlaskConical, Camera, Users, Code, Eye, MessageSquare, Box, PenLine } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export const Route = createFileRoute("/skills")({
@@ -32,6 +32,7 @@ const groups: Group[] = [
     items: [
       { name: "Laboratory Techniques (Titration, Distillation)", level: 80, icon: FlaskConical },
       { name: "Food Science & Chemistry", level: 70, icon: FlaskConical },
+      { name: "Creo Parametric (Intermediate)", level: 60, icon: Box },
       { name: "Coding (Beginner)", level: 35, icon: Code },
     ],
   },
@@ -41,6 +42,7 @@ const groups: Group[] = [
     items: [
       { name: "Photography", level: 85, icon: Camera },
       { name: "Composition & Visual Storytelling", level: 80, icon: Eye },
+      { name: "Content Writing", level: 75, icon: PenLine },
     ],
   },
   {

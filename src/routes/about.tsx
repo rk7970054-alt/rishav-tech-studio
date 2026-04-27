@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "../components/PageShell";
-import { GraduationCap, MapPin, Sparkles, Award } from "lucide-react";
+import { GraduationCap, MapPin, Sparkles, Award, Target, Briefcase, Rocket } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -108,6 +108,40 @@ function AboutPage() {
               <p className="text-sm text-muted-foreground">{e.place}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Future Planning */}
+      <div className="mt-14">
+        <h2 className="font-display text-2xl font-bold mb-2 flex items-center gap-2">
+          <Target className="text-primary" /> Future Planning
+        </h2>
+        <p className="text-sm text-muted-foreground mb-6">
+          Looking beyond the BTech — combining technical expertise with business acumen.
+        </p>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
+            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground">
+              <Briefcase size={20} />
+            </div>
+            <h3 className="mt-4 font-display text-lg font-bold">MBA</h3>
+            <p className="mt-2 text-sm text-foreground/80">
+              Pursue an MBA to strengthen my understanding of management, strategy, and
+              leadership — bridging food technology with business.
+            </p>
+          </div>
+          <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
+            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-accent/20 blur-3xl" />
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground">
+              <Rocket size={20} />
+            </div>
+            <h3 className="mt-4 font-display text-lg font-bold">Start My Own Business</h3>
+            <p className="mt-2 text-sm text-foreground/80">
+              Launch my own venture in the food industry — focused on innovative,
+              sustainable, and health-conscious products that make a real impact.
+            </p>
+          </div>
         </div>
       </div>
 
