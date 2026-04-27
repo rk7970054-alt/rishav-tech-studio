@@ -165,7 +165,7 @@ function HomePage() {
               icon: BookOpen,
               title: "Education",
               desc: "Tutoring 9th & 10th grade students with patience and clarity.",
-              href: "/services",
+              href: "/experience",
             },
             {
               icon: Camera,
