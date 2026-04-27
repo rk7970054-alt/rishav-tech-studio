@@ -134,91 +134,56 @@ function SwotPage() {
       }
       intro="An honest self-assessment — strengths, weaknesses, opportunities, and threats — to guide my growth."
     >
-      {/* Quadrant summary chips */}
-      <div className="mb-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+      {/* 4-card SWOT grid */}
+      <div className="grid md:grid-cols-2 gap-6">
         {quadrants.map((q) => (
           <div
-            key={`chip-${q.key}`}
-            className={`glass-card rounded-xl p-4 border ${q.border} bg-gradient-to-br ${q.accent}`}
+            key={q.key}
+            className={`glass-card relative overflow-hidden rounded-2xl border ${q.border} bg-gradient-to-br ${q.accent} p-6 md:p-7 shadow-[var(--shadow-card)] transition-transform hover:-translate-y-1`}
           >
-            <div className="flex items-center gap-2">
+            <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-white/5 blur-3xl" />
+
+            <div className="relative flex items-center gap-3">
               <div
-                className={`grid h-8 w-8 place-items-center rounded-lg border ${q.chip}`}
+                className={`grid h-11 w-11 place-items-center rounded-xl border ${q.chip}`}
               >
-                <q.icon size={14} />
+                <q.icon size={18} />
               </div>
               <div>
-                <p className="font-display text-sm font-semibold">{q.label}</p>
-                <p className="text-[11px] text-muted-foreground">
+                <h3 className="font-display text-xl font-bold text-foreground">
+                  {q.label}
+                </h3>
+                <p className="text-[11px] uppercase tracking-wider text-foreground/60">
                   {q.items.length} {q.items.length === 1 ? "point" : "points"}
                 </p>
               </div>
             </div>
+
+            <ul className="relative mt-5 space-y-4">
+              {q.items.map((item, idx) => (
+                <li key={idx} className="flex gap-3">
+                  <span
+                    className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full border ${q.chip}`}
+                  />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 text-sm leading-relaxed text-foreground/75">
+                      {item.desc}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
 
-      {/* Tabular SWOT */}
-      <div className="glass-card overflow-hidden rounded-2xl">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-white/10 bg-white/5">
-                <th className="w-44 px-5 py-4 text-left font-display text-xs uppercase tracking-wider text-muted-foreground">
-                  Category
-                </th>
-                <th className="w-56 px-5 py-4 text-left font-display text-xs uppercase tracking-wider text-muted-foreground">
-                  Point
-                </th>
-                <th className="px-5 py-4 text-left font-display text-xs uppercase tracking-wider text-muted-foreground">
-                  Description
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {quadrants.flatMap((q) =>
-                q.items.map((item, idx) => (
-                  <tr
-                    key={`${q.key}-${idx}`}
-                    className="border-b border-white/5 last:border-0 transition-colors hover:bg-white/[0.04]"
-                  >
-                    {idx === 0 && (
-                      <td
-                        rowSpan={q.items.length}
-                        className={`px-5 py-5 align-top border-r border-white/10 bg-gradient-to-b ${q.accent}`}
-                      >
-                        <div className="flex flex-col gap-2">
-                          <div
-                            className={`inline-flex items-center gap-2 self-start rounded-full border px-3 py-1 text-xs font-semibold ${q.chip}`}
-                          >
-                            <q.icon size={14} />
-                            {q.label}
-                          </div>
-                          <span className="text-[11px] text-muted-foreground">
-                            {q.items.length} {q.items.length === 1 ? "point" : "points"}
-                          </span>
-                        </div>
-                      </td>
-                    )}
-                    <td className="px-5 py-5 align-top font-medium text-foreground">
-                      {item.title}
-                    </td>
-                    <td className="px-5 py-5 align-top text-muted-foreground leading-relaxed">
-                      {item.desc}
-                    </td>
-                  </tr>
-                )),
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
       {/* Closing note */}
-      <p className="mt-6 text-center text-xs text-muted-foreground">
+      <p className="mt-8 text-center text-xs text-foreground/60">
         Updated regularly as I grow, learn, and take on new challenges.
       </p>
-
     </PageShell>
   );
 }

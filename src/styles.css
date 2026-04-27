@@ -57,25 +57,25 @@
 :root {
   --radius: 0.875rem;
 
-  /* Dark portfolio theme — deep navy with electric blue accents */
+  /* Dark portfolio theme — deep navy with warm beige/light-yellow text for contrast */
   --background: oklch(0.16 0.04 260);
-  --foreground: oklch(0.97 0.01 250);
+  --foreground: oklch(0.96 0.04 95); /* warm beige / light cream */
 
   --card: oklch(0.21 0.045 262 / 60%);
-  --card-foreground: oklch(0.97 0.01 250);
+  --card-foreground: oklch(0.96 0.04 95);
 
   --popover: oklch(0.19 0.045 262);
-  --popover-foreground: oklch(0.97 0.01 250);
+  --popover-foreground: oklch(0.96 0.04 95);
 
   --primary: oklch(0.68 0.22 255);
-  --primary-foreground: oklch(0.12 0.04 260);
+  --primary-foreground: oklch(0.98 0.05 95);
   --primary-glow: oklch(0.78 0.18 240);
 
   --secondary: oklch(0.27 0.05 262);
-  --secondary-foreground: oklch(0.97 0.01 250);
+  --secondary-foreground: oklch(0.96 0.04 95);
 
   --muted: oklch(0.24 0.04 262);
-  --muted-foreground: oklch(0.72 0.03 255);
+  --muted-foreground: oklch(0.86 0.06 92); /* soft warm beige for secondary text */
 
   --accent: oklch(0.78 0.18 240);
   --accent-foreground: oklch(0.12 0.04 260);
