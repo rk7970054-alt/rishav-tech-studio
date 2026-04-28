@@ -43,14 +43,14 @@ export function ParticleBackground() {
     const count = Math.min(120, Math.max(60, Math.floor(area / 16000)));
 
     const mkParticle = (): Particle => {
-      const r = Math.random() * 4 + 4; // 4-8px (medium)
+      const r = Math.random() * 4 + 4; // 4-8px bubble
       return {
         x: Math.random() * width,
         y: Math.random() * height,
         r,
         vx: (Math.random() - 0.5) * 0.22,
         vy: (Math.random() - 0.5) * 0.22,
-        alpha: Math.random() * 0.1 + 0.15, // 15-25%
+        alpha: Math.random() * 0.05 + 0.06, // very soft 6-11%
         hue: Math.random() > 0.55 ? "blue" : "white",
         parallax: Math.random() * 0.9 + 0.1,
       };
@@ -136,19 +136,29 @@ export function ParticleBackground() {
 
         const baseColor = p.hue === "blue" ? "173, 216, 255" : "255, 255, 255";
 
-        const glowR = p.r * 2.6;
-        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, glowR);
-        grad.addColorStop(0, `rgba(${baseColor}, ${p.alpha})`);
-        grad.addColorStop(0.4, `rgba(${baseColor}, ${p.alpha * 0.45})`);
+        // hollow bubble: soft outer glow + faint thin rim, no solid core
+        const glowR = p.r * 2.2;
+        const grad = ctx.createRadialGradient(cx, cy, p.r * 0.2, cx, cy, glowR);
+        grad.addColorStop(0, `rgba(${baseColor}, 0)`);
+        grad.addColorStop(0.55, `rgba(${baseColor}, ${p.alpha * 0.35})`);
+        grad.addColorStop(0.85, `rgba(${baseColor}, ${p.alpha})`);
         grad.addColorStop(1, `rgba(${baseColor}, 0)`);
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(cx, cy, glowR, 0, Math.PI * 2);
         ctx.fill();
 
+        // thin rim outline like a bubble edge
         ctx.beginPath();
-        ctx.arc(cx, cy, p.r * 0.55, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${baseColor}, ${Math.min(1, p.alpha + 0.05)})`;
+        ctx.arc(cx, cy, p.r, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(${baseColor}, ${p.alpha * 0.9})`;
+        ctx.lineWidth = 0.6;
+        ctx.stroke();
+
+        // tiny highlight to suggest air bubble
+        ctx.beginPath();
+        ctx.arc(cx - p.r * 0.35, cy - p.r * 0.35, p.r * 0.15, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha * 0.8})`;
         ctx.fill();
       }
       rafRef.current = requestAnimationFrame(tick);
