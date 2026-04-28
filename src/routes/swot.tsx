@@ -74,8 +74,8 @@ const swot = {
   ],
   threats: [
     {
-      title: "High Competition in the Field",
-      desc: "The increasing number of students and professionals in this domain makes it essential to continuously improve skills and stand out.",
+      title: "Limited Networking",
+      desc: "Not connecting with seniors, professors, or professionals can reduce exposure to opportunities.",
     },
     {
       title: "Rapid Technological Changes",

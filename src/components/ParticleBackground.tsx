@@ -37,17 +37,17 @@ export function ParticleBackground() {
 
     setSize();
 
-    // Low density: scale with viewport area
+    // Higher density, still subtle
     const area = width * height;
-    const count = Math.min(70, Math.max(30, Math.floor(area / 28000)));
+    const count = Math.min(180, Math.max(90, Math.floor(area / 11000)));
 
     const particles: Particle[] = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: Math.random() * 2 + 1, // 1-3px
-      vx: (Math.random() - 0.5) * 0.12, // very slow
-      vy: (Math.random() - 0.5) * 0.12,
-      alpha: Math.random() * 0.1 + 0.1, // 10-20%
+      r: Math.random() * 1.6 + 0.6, // 0.6-2.2px (smaller to blend)
+      vx: (Math.random() - 0.5) * 0.28, // gentle constant motion
+      vy: (Math.random() - 0.5) * 0.28,
+      alpha: Math.random() * 0.07 + 0.05, // 5-12% — merges with bg
       hue: Math.random() > 0.55 ? "blue" : "white",
     }));
 
