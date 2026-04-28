@@ -8,11 +8,13 @@ type Particle = {
   vy: number;
   alpha: number;
   hue: "white" | "blue";
+  parallax: number; // parallax depth factor 0..1
 };
 
 export function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const rafRef = useRef<number | null>(null);
+  const pointerRef = useRef({ tx: 0, ty: 0, x: 0, y: 0 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -37,42 +39,73 @@ export function ParticleBackground() {
 
     setSize();
 
-    // Higher density, still subtle
+    // Low-medium density medium-sized bubbles
     const area = width * height;
-    const count = Math.min(180, Math.max(90, Math.floor(area / 11000)));
+    const count = Math.min(80, Math.max(35, Math.floor(area / 28000)));
 
     const particles: Particle[] = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: Math.random() * 1.6 + 0.6, // 0.6-2.2px (smaller to blend)
-      vx: (Math.random() - 0.5) * 0.28, // gentle constant motion
-      vy: (Math.random() - 0.5) * 0.28,
-      alpha: Math.random() * 0.07 + 0.05, // 5-12% — merges with bg
-      hue: Math.random() > 0.55 ? "blue" : "white",
+      r: Math.random() * 4 + 4, // 4-8px
+      vx: (Math.random() - 0.5) * 0.18, // slow smooth drift
+      vy: (Math.random() - 0.5) * 0.18,
+      alpha: Math.random() * 0.1 + 0.15, // 15-25%
+      hue: Math.random() > 0.5 ? "blue" : "white",
+      parallax: Math.random() * 0.9 + 0.1, // depth
     }));
 
     const handleResize = () => setSize();
+    const handlePointer = (e: PointerEvent) => {
+      // normalize -0.5..0.5
+      pointerRef.current.tx = (e.clientX / width - 0.5) * 2;
+      pointerRef.current.ty = (e.clientY / height - 0.5) * 2;
+    };
     window.addEventListener("resize", handleResize);
+    window.addEventListener("pointermove", handlePointer);
 
     const tick = () => {
       ctx.clearRect(0, 0, width, height);
+
+      // ease pointer for smooth parallax
+      pointerRef.current.x += (pointerRef.current.tx - pointerRef.current.x) * 0.04;
+      pointerRef.current.y += (pointerRef.current.ty - pointerRef.current.y) * 0.04;
+      const px = pointerRef.current.x;
+      const py = pointerRef.current.y;
+
       for (const p of particles) {
         p.x += p.vx;
         p.y += p.vy;
 
         // wrap around edges
-        if (p.x < -5) p.x = width + 5;
-        if (p.x > width + 5) p.x = -5;
-        if (p.y < -5) p.y = height + 5;
-        if (p.y > height + 5) p.y = -5;
+        if (p.x < -20) p.x = width + 20;
+        if (p.x > width + 20) p.x = -20;
+        if (p.y < -20) p.y = height + 20;
+        if (p.y > height + 20) p.y = -20;
 
+        // parallax offset (max ~18px)
+        const ox = -px * 18 * p.parallax;
+        const oy = -py * 18 * p.parallax;
+        const cx = p.x + ox;
+        const cy = p.y + oy;
+
+        const baseColor =
+          p.hue === "blue" ? "173, 216, 255" : "255, 255, 255";
+
+        // soft glow via radial gradient (no canvas filter for perf)
+        const glowR = p.r * 3.2;
+        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, glowR);
+        grad.addColorStop(0, `rgba(${baseColor}, ${p.alpha})`);
+        grad.addColorStop(0.4, `rgba(${baseColor}, ${p.alpha * 0.45})`);
+        grad.addColorStop(1, `rgba(${baseColor}, 0)`);
+        ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        const color =
-          p.hue === "blue"
-            ? `rgba(173, 216, 255, ${p.alpha})`
-            : `rgba(255, 255, 255, ${p.alpha})`;
-        ctx.fillStyle = color;
+        ctx.arc(cx, cy, glowR, 0, Math.PI * 2);
+        ctx.fill();
+
+        // bright core bubble
+        ctx.beginPath();
+        ctx.arc(cx, cy, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${baseColor}, ${Math.min(1, p.alpha + 0.05)})`;
         ctx.fill();
       }
       rafRef.current = requestAnimationFrame(tick);
@@ -82,6 +115,7 @@ export function ParticleBackground() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("pointermove", handlePointer);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, []);
