@@ -39,18 +39,18 @@ export function ParticleBackground() {
 
     setSize();
 
-    // Low-medium density medium-sized bubbles
+    // Higher density, small subtle bubbles
     const area = width * height;
-    const count = Math.min(80, Math.max(35, Math.floor(area / 28000)));
+    const count = Math.min(180, Math.max(90, Math.floor(area / 11000)));
 
     const particles: Particle[] = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: Math.random() * 4 + 4, // 4-8px
-      vx: (Math.random() - 0.5) * 0.18, // slow smooth drift
-      vy: (Math.random() - 0.5) * 0.18,
-      alpha: Math.random() * 0.1 + 0.15, // 15-25%
-      hue: Math.random() > 0.5 ? "blue" : "white",
+      r: Math.random() * 1.6 + 0.6, // 0.6-2.2px (small like before)
+      vx: (Math.random() - 0.5) * 0.28,
+      vy: (Math.random() - 0.5) * 0.28,
+      alpha: Math.random() * 0.07 + 0.08, // 8-15%
+      hue: Math.random() > 0.55 ? "blue" : "white",
       parallax: Math.random() * 0.9 + 0.1, // depth
     }));
 
