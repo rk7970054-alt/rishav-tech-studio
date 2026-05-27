@@ -135,7 +135,7 @@ export function ParticleBackground() {
         const cx = p.x + ox;
         const cy = p.y + oy;
 
-        const baseColor = "250, 244, 214";
+        const baseColor = "180, 150, 70";
 
         // very soft outer halo
         const glowR = p.r * 2.4;
