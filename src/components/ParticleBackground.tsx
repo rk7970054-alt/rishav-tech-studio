@@ -43,18 +43,19 @@ export function ParticleBackground() {
     const count = Math.min(120, Math.max(60, Math.floor(area / 16000)));
 
     const mkParticle = (): Particle => {
-      const r = Math.random() * 2 + 1.5; // 1.5-3.5px tiny bubble
+      const r = Math.random() * 2.5 + 2; // 2-4.5px
       return {
         x: Math.random() * width,
         y: Math.random() * height,
         r,
         vx: (Math.random() - 0.5) * 0.18,
         vy: (Math.random() - 0.5) * 0.18,
-        alpha: Math.random() * 0.03 + 0.03, // very faint 3-6%
+        alpha: Math.random() * 0.08 + 0.1, // visible but soft 10-18%
         hue: "white",
         parallax: Math.random() * 0.9 + 0.1,
       };
     };
+
 
     const particles: Particle[] = Array.from({ length: count }, mkParticle);
 
@@ -134,7 +135,7 @@ export function ParticleBackground() {
         const cx = p.x + ox;
         const cy = p.y + oy;
 
-        const baseColor = "220, 220, 225";
+        const baseColor = "180, 150, 70";
 
         // very soft outer halo
         const glowR = p.r * 2.4;
@@ -172,7 +173,7 @@ export function ParticleBackground() {
       ref={canvasRef}
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-0"
-      style={{ mixBlendMode: "screen" }}
+      style={{ mixBlendMode: "multiply" }}
     />
   );
 }
