@@ -135,7 +135,7 @@ function ProjectsPage() {
           </div>
           <h3 className="mt-5 font-display text-lg font-bold">Time Management</h3>
           <p className="text-xs text-muted-foreground">LinkedIn Learning</p>
-          <p className="mt-3 text-sm text-foreground/80">
+          <p className="mt-3 text-sm text-foreground">
             Focused on productivity, prioritization, and structured planning — reflecting a
             disciplined growth mindset.
           </p>
