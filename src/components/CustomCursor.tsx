@@ -63,6 +63,8 @@ export function CustomCursor() {
       className="custom-cursor"
       style={{
         opacity: visible ? 1 : 0,
+        background: "#000",
+        mixBlendMode: "normal",
       }}
     />
   );
