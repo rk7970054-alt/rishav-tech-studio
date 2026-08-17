@@ -172,11 +172,11 @@
   width: 10px;
   height: 10px;
   border-radius: 9999px;
-  background: var(--color-foreground);
+  background: #000;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: difference;
-  transition: opacity 0.2s ease, background 0.2s ease;
+  mix-blend-mode: normal;
+  transition: opacity 0.2s ease, transform 0.15s ease-out;
   will-change: transform;
 }
 
