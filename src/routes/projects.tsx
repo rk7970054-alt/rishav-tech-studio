@@ -64,7 +64,7 @@ function ProjectsPage() {
               A collaborative food processing project focused on innovation and practical
               learning — exploring formulation, texture, and shelf-life.
             </p>
-            <div className="mt-3 flex items-center gap-2 text-xs text-foreground/70">
+            <div className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
               <Users size={14} className="text-primary" />
               <span>Collaborated with my friend on this project.</span>
             </div>
@@ -72,7 +72,7 @@ function ProjectsPage() {
               {["Collaboration", "Formulation", "Innovation"].map((t) => (
                 <span
                   key={t}
-                  className="text-xs rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-muted-foreground"
+                  className="text-xs rounded-full border border-foreground/10 bg-foreground/5 px-2.5 py-1 text-foreground"
                 >
                   {t}
                 </span>
@@ -105,7 +105,7 @@ function ProjectsPage() {
               {["Lighting", "Composition", "Storytelling"].map((t) => (
                 <span
                   key={t}
-                  className="text-xs rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-muted-foreground"
+                  className="text-xs rounded-full border border-foreground/10 bg-foreground/5 px-2.5 py-1 text-foreground"
                 >
                   {t}
                 </span>

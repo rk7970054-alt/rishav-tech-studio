@@ -120,7 +120,7 @@ function ExperiencePage() {
                 <h3 className="mt-1 font-display text-lg font-bold">
                   Maths Olympiad — 1st Prize
                 </h3>
-                <p className="mt-2 text-sm text-foreground/80">
+                <p className="mt-2 text-sm text-foreground">
                   Won first prize in the Maths Olympiad in 2019 — an early recognition of
                   analytical thinking, problem-solving, and consistent effort.
                 </p>
@@ -139,7 +139,7 @@ function ExperiencePage() {
                 <h3 className="mt-1 font-display text-lg font-bold">
                   Time Management Skills
                 </h3>
-                <p className="mt-2 text-sm text-foreground/80">
+                <p className="mt-2 text-sm text-foreground">
                   Completed a Time Management course focused on prioritization,
                   productivity, and balancing academics with creative pursuits.
                 </p>

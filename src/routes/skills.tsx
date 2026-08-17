@@ -120,7 +120,7 @@ function SkillsPage() {
           ].map((t) => (
             <span
               key={t}
-              className="text-xs rounded-full border border-primary/20 bg-primary/5 text-foreground/90 px-3 py-1.5 hover:border-primary/50 hover:bg-primary/10 transition-colors"
+              className="text-xs rounded-full border border-primary/20 bg-primary/5 text-foreground px-3 py-1.5 hover:border-primary/50 hover:bg-primary/10 transition-colors"
             >
               {t}
             </span>
@@ -146,7 +146,7 @@ function SkillsPage() {
         ].map((c) => (
           <div key={c.title} className="glass-card rounded-2xl p-6">
             <h3 className="font-display text-lg font-bold text-gradient">{c.title}</h3>
-            <ul className="mt-4 space-y-2 text-sm text-foreground/80">
+            <ul className="mt-4 space-y-2 text-sm text-foreground">
               {c.items.map((i) => (
                 <li key={i} className="flex gap-2">
                   <span className="mt-2 h-1 w-1 rounded-full bg-primary shrink-0" />
