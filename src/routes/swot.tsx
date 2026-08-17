@@ -90,36 +90,40 @@ const quadrants = [
     label: "Strengths",
     icon: Sparkles,
     items: swot.strengths,
-    accent: "from-emerald-500/20 to-emerald-500/5",
-    border: "border-emerald-400/30",
-    chip: "bg-emerald-500/15 text-emerald-300 border-emerald-400/30",
+    accent: "from-emerald-600/15 to-emerald-600/5",
+    border: "border-emerald-600/25",
+    chip: "bg-emerald-600/15 text-emerald-800 border-emerald-600/30",
+    bullet: "border-emerald-600/40 bg-emerald-600/20",
   },
   {
     key: "weaknesses",
     label: "Weaknesses",
     icon: AlertTriangle,
     items: swot.weaknesses,
-    accent: "from-amber-500/20 to-amber-500/5",
-    border: "border-amber-400/30",
-    chip: "bg-amber-500/15 text-amber-300 border-amber-400/30",
+    accent: "from-amber-600/15 to-amber-600/5",
+    border: "border-amber-600/25",
+    chip: "bg-amber-600/15 text-amber-800 border-amber-600/30",
+    bullet: "border-amber-600/40 bg-amber-600/20",
   },
   {
     key: "opportunities",
     label: "Opportunities",
     icon: Lightbulb,
     items: swot.opportunities,
-    accent: "from-sky-500/20 to-sky-500/5",
-    border: "border-sky-400/30",
-    chip: "bg-sky-500/15 text-sky-300 border-sky-400/30",
+    accent: "from-sky-600/15 to-sky-600/5",
+    border: "border-sky-600/25",
+    chip: "bg-sky-600/15 text-sky-800 border-sky-600/30",
+    bullet: "border-sky-600/40 bg-sky-600/20",
   },
   {
     key: "threats",
     label: "Threats",
     icon: ShieldAlert,
     items: swot.threats,
-    accent: "from-rose-500/20 to-rose-500/5",
-    border: "border-rose-400/30",
-    chip: "bg-rose-500/15 text-rose-300 border-rose-400/30",
+    accent: "from-rose-600/15 to-rose-600/5",
+    border: "border-rose-600/25",
+    chip: "bg-rose-600/15 text-rose-800 border-rose-600/30",
+    bullet: "border-rose-600/40 bg-rose-600/20",
   },
 ];
 
@@ -153,7 +157,7 @@ function SwotPage() {
                 <h3 className="font-display text-xl font-bold text-foreground">
                   {q.label}
                 </h3>
-                <p className="text-[11px] uppercase tracking-wider text-foreground/60">
+                <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
                   {q.items.length} {q.items.length === 1 ? "point" : "points"}
                 </p>
               </div>
@@ -163,13 +167,13 @@ function SwotPage() {
               {q.items.map((item, idx) => (
                 <li key={idx} className="flex gap-3">
                   <span
-                    className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full border ${q.chip}`}
+                    className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full border ${q.bullet}`}
                   />
                   <div>
                     <p className="text-sm font-semibold text-foreground">
                       {item.title}
                     </p>
-                    <p className="mt-1 text-sm leading-relaxed text-foreground/75">
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                       {item.desc}
                     </p>
                   </div>
@@ -181,7 +185,7 @@ function SwotPage() {
       </div>
 
       {/* Closing note */}
-      <p className="mt-8 text-center text-xs text-foreground/60">
+      <p className="mt-8 text-center text-xs text-muted-foreground">
         Updated regularly as I grow, learn, and take on new challenges.
       </p>
     </PageShell>

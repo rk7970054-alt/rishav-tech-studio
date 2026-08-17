@@ -61,7 +61,7 @@ function HomePage() {
               Educator & Creative Enthusiast
             </p>
 
-            <p className="mt-4 text-base text-foreground/80 italic max-w-xl">
+            <p className="mt-4 text-base text-muted-foreground italic max-w-xl">
               "Exploring the science of food to build a healthier and sustainable future."
             </p>
 

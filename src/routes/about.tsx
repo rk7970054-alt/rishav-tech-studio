@@ -49,7 +49,7 @@ function AboutPage() {
     >
       {/* Bio + traits */}
       <div className="grid lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 glass-card rounded-2xl p-7 space-y-4 text-foreground/90">
+        <div className="lg:col-span-2 glass-card rounded-2xl p-7 space-y-4 text-foreground">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <MapPin size={16} className="text-primary" /> Gaya, Bihar · India
           </div>
@@ -68,7 +68,7 @@ function AboutPage() {
             {traits.map((t) => (
               <div
                 key={t.label}
-                className="rounded-xl border border-white/5 bg-white/5 p-4 hover:border-primary/30 transition-colors"
+                className="rounded-xl border border-foreground/10 bg-foreground/5 p-4 hover:border-primary/30 transition-colors"
               >
                 <div className="flex items-center gap-2">
                   <Sparkles size={14} className="text-primary" />
@@ -88,7 +88,7 @@ function AboutPage() {
             Recognition
           </p>
           <h3 className="mt-1 font-display text-xl font-bold">LPUNEST Qualified</h3>
-          <p className="mt-3 text-sm text-foreground/80">
+          <p className="mt-3 text-sm text-foreground">
             Qualified the Lovely Professional University National Entrance and Scholarship Test
             and was awarded a <span className="text-primary font-semibold">40% scholarship</span>{" "}
             in recognition of academic potential and performance.
@@ -139,7 +139,7 @@ function AboutPage() {
                 <Briefcase size={20} />
               </div>
               <h3 className="mt-4 font-display text-lg font-bold">MBA</h3>
-              <p className="mt-2 text-sm text-foreground/80">
+              <p className="mt-2 text-sm text-foreground">
                 Pursue an MBA to strengthen my understanding of management, strategy, and
                 leadership — bridging food technology with business.
               </p>
@@ -162,7 +162,7 @@ function AboutPage() {
                 <Rocket size={20} />
               </div>
               <h3 className="mt-4 font-display text-lg font-bold">Start My Own Business</h3>
-              <p className="mt-2 text-sm text-foreground/80">
+              <p className="mt-2 text-sm text-foreground">
                 Launch my own venture in the food industry — focused on innovative,
                 sustainable, and health-conscious products that make a real impact.
               </p>
@@ -227,7 +227,7 @@ function AboutPage() {
             ].map((t) => (
               <span
                 key={t}
-                className="text-xs rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-foreground/80"
+                className="text-xs rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1.5 text-foreground"
               >
                 {t}
               </span>
