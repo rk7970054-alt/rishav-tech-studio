@@ -51,8 +51,8 @@ export function Navbar() {
               <Link
                 key={l.to}
                 to={l.to}
-                className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                activeProps={{ className: "rounded-lg px-3 py-2 text-sm text-foreground bg-white/5" }}
+                className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground hover:bg-foreground/5"
+                activeProps={{ className: "rounded-lg px-3 py-2 text-sm text-foreground bg-foreground/8" }}
                 activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
@@ -85,8 +85,8 @@ export function Navbar() {
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-white/5"
-                activeProps={{ className: "rounded-lg px-3 py-2 text-sm text-foreground bg-white/5" }}
+                className="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-foreground/5"
+                activeProps={{ className: "rounded-lg px-3 py-2 text-sm text-foreground bg-foreground/8" }}
                 activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
