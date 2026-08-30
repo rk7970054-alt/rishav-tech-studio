@@ -48,7 +48,7 @@ function ContactPage() {
             href="mailto:rk7970054@gmail.com"
             className="glass-card rounded-2xl p-5 flex items-center gap-4 hover:border-primary/40 transition-colors"
           >
-            <div className="grid h-11 w-11 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground">
+            <div className="grid h-11 w-11 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground">
               <Mail size={18} />
             </div>
             <div>
@@ -63,7 +63,7 @@ function ContactPage() {
             rel="noreferrer"
             className="glass-card rounded-2xl p-5 flex items-center gap-4 hover:border-primary/40 transition-colors"
           >
-            <div className="grid h-11 w-11 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground">
+            <div className="grid h-11 w-11 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground">
               <Linkedin size={18} />
             </div>
             <div>
@@ -73,7 +73,7 @@ function ContactPage() {
           </a>
 
           <div className="glass-card rounded-2xl p-5 flex items-center gap-4">
-            <div className="grid h-11 w-11 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground">
+            <div className="grid h-11 w-11 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground">
               <MapPin size={18} />
             </div>
             <div>
@@ -120,7 +120,7 @@ function ContactPage() {
 
           <button
             type="submit"
-            className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] hover:scale-[1.02] transition-transform"
+            className="inline-flex items-center gap-2 rounded-xl bg-[image:var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] hover:scale-[1.02] transition-transform"
           >
             <Send size={16} /> {sent ? "Opening mail…" : "Send message"}
           </button>

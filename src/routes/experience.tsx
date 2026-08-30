@@ -71,7 +71,7 @@ function ExperiencePage() {
             key={it.title}
             className="glass-card rounded-2xl p-6 transition-transform hover:-translate-y-1 hover:border-primary/40"
           >
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
               <it.icon size={20} />
             </div>
             <p className="mt-5 text-xs text-primary font-medium">{it.period}</p>
@@ -112,7 +112,7 @@ function ExperiencePage() {
           <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
             <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-primary/30 blur-3xl" />
             <div className="flex items-start gap-4">
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
                 <Trophy size={20} />
               </div>
               <div>
@@ -131,7 +131,7 @@ function ExperiencePage() {
           <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
             <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-accent/30 blur-3xl" />
             <div className="flex items-start gap-4">
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
                 <Clock size={20} />
               </div>
               <div>

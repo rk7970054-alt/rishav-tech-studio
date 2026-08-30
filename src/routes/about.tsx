@@ -135,7 +135,7 @@ function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
             </div>
             <div className="p-6 relative">
-              <div className="absolute -top-6 left-6 grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+              <div className="absolute -top-6 left-6 grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
                 <Briefcase size={20} />
               </div>
               <h3 className="mt-4 font-display text-lg font-bold">MBA</h3>
@@ -158,7 +158,7 @@ function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
             </div>
             <div className="p-6 relative">
-              <div className="absolute -top-6 left-6 grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+              <div className="absolute -top-6 left-6 grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
                 <Rocket size={20} />
               </div>
               <h3 className="mt-4 font-display text-lg font-bold">Start My Own Business</h3>
@@ -205,7 +205,7 @@ function AboutPage() {
                 </div>
                 <div className="mt-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
                   <div
-                    className="h-full rounded-full bg-[var(--gradient-primary)]"
+                    className="h-full rounded-full bg-[image:var(--gradient-primary)]"
                     style={{ width: `${lang.v}%` }}
                   />
                 </div>

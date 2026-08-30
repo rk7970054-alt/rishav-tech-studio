@@ -125,7 +125,7 @@ function ProjectsPage() {
           className="glass-card rounded-2xl p-6 group hover:border-primary/40 transition-colors block"
         >
           <div className="flex items-start justify-between">
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground">
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground">
               <Award size={20} />
             </div>
             <ExternalLink

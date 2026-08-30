@@ -86,7 +86,7 @@ function SkillsPage() {
                   </div>
                   <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
                     <div
-                      className="h-full rounded-full bg-[var(--gradient-primary)] shadow-[0_0_12px_var(--color-primary)]"
+                      className="h-full rounded-full bg-[image:var(--gradient-primary)] shadow-[0_0_12px_var(--color-primary)]"
                       style={{ width: `${s.level}%` }}
                     />
                   </div>
