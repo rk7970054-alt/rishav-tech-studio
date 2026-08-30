@@ -135,7 +135,7 @@ export function ParticleBackground() {
         const cx = p.x + ox;
         const cy = p.y + oy;
 
-        const baseColor = "150, 115, 55";
+        const baseColor = "230, 205, 150";
 
         // very soft outer halo
         const glowR = p.r * 2.4;
@@ -173,7 +173,7 @@ export function ParticleBackground() {
       ref={canvasRef}
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-0"
-      style={{ mixBlendMode: "multiply" }}
+      style={{ mixBlendMode: "screen" }}
     />
   );
 }

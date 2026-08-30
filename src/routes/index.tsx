@@ -68,7 +68,7 @@ function HomePage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/projects"
-                className="group inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
+                className="group inline-flex items-center gap-2 rounded-xl bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
               >
                 Explore My Work
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -103,7 +103,7 @@ function HomePage() {
 
           {/* portrait card */}
           <div className="relative">
-            <div className="absolute -inset-4 rounded-3xl bg-[var(--gradient-primary)] opacity-30 blur-2xl animate-glow" />
+            <div className="absolute -inset-4 rounded-3xl bg-[image:var(--gradient-primary)] opacity-30 blur-2xl animate-glow" />
             <div className="relative glass-card rounded-3xl p-3 animate-float">
               <img
                 src={portrait}
@@ -180,7 +180,7 @@ function HomePage() {
               to={c.href}
               className="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1 hover:border-primary/40"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
                 <c.icon size={20} />
               </div>
               <h3 className="mt-5 font-display text-lg font-bold">{c.title}</h3>
@@ -222,7 +222,7 @@ function HomePage() {
             <div className="mt-6 flex flex-wrap gap-3 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] hover:scale-105 transition-transform"
+                className="inline-flex items-center gap-2 rounded-xl bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] hover:scale-105 transition-transform"
               >
                 Get in touch <ArrowRight size={16} />
               </Link>
