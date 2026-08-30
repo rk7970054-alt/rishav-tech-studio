@@ -39,6 +39,8 @@
   --animate-gradient: gradient-shift 22s ease infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-glow: glow-pulse 6s ease-in-out infinite;
+  --animate-text-reveal: text-reveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-text-float: text-float 7s ease-in-out infinite;
 
   @keyframes gradient-shift {
     0%, 100% { background-position: 0% 50%; }
@@ -51,6 +53,14 @@
   @keyframes glow-pulse {
     0%, 100% { opacity: 0.5; transform: scale(1); }
     50% { opacity: 0.85; transform: scale(1.04); }
+  }
+  @keyframes text-reveal {
+    0% { opacity: 0; transform: translateY(18px); letter-spacing: 0.04em; }
+    100% { opacity: 1; transform: translateY(0); letter-spacing: 0; }
+  }
+  @keyframes text-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
   }
 }
 
