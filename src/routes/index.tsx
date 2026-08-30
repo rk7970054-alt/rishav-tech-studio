@@ -52,16 +52,16 @@ function HomePage() {
               <Sparkles size={14} /> Available for collaborations
             </span>
 
-            <h1 className="mt-5 font-display text-5xl md:text-7xl font-bold leading-[1.05]">
+            <h1 className="mt-5 font-display text-5xl md:text-7xl font-bold leading-[1.05] animate-text-reveal">
               Hi, I'm <span className="text-gradient">Rishav Kumar</span>
             </h1>
 
-            <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-xl">
+            <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-xl animate-text-reveal" style={{ animationDelay: "0.15s" }}>
               BTech Food Technology Undergraduate · Aspiring Food Technologist ·
               Educator & Creative Enthusiast
             </p>
 
-            <p className="mt-4 text-base text-muted-foreground italic max-w-xl">
+            <p className="mt-4 text-base text-muted-foreground italic max-w-xl animate-text-float" style={{ animationDelay: "0.3s" }}>
               "Exploring the science of food to build a healthier and sustainable future."
             </p>
 
