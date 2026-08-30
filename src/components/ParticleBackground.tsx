@@ -48,8 +48,8 @@ export function ParticleBackground() {
         x: Math.random() * width,
         y: Math.random() * height,
         r,
-        vx: (Math.random() - 0.5) * 0.18,
-        vy: (Math.random() - 0.5) * 0.18,
+        vx: (Math.random() - 0.5) * 0.05,
+        vy: (Math.random() - 0.5) * 0.05,
         alpha: Math.random() * 0.08 + 0.1, // visible but soft 10-18%
         hue: "white",
         parallax: Math.random() * 0.9 + 0.1,
@@ -75,12 +75,12 @@ export function ParticleBackground() {
     window.addEventListener("pointerleave", handleLeave);
 
     // Interaction tuning
-    const INTERACT_RADIUS = 120; // small area around cursor
+    const INTERACT_RADIUS = 90; // small area around cursor
     const INTERACT_RADIUS_SQ = INTERACT_RADIUS * INTERACT_RADIUS;
-    const FORCE_STRENGTH = 0.18; // gentle
-    const MAX_SPEED = 1.4;
-    const FRICTION = 0.96; // ease back to slow drift
-    const REST_SPEED = 0.22;
+    const FORCE_STRENGTH = 0.08; // very gentle
+    const MAX_SPEED = 0.5;
+    const FRICTION = 0.92; // ease back to slow drift
+    const REST_SPEED = 0.06;
 
     const tick = () => {
       ctx.clearRect(0, 0, width, height);
@@ -130,8 +130,8 @@ export function ParticleBackground() {
         if (p.y > height + 20) p.y = -20;
 
         // parallax
-        const ox = -px * 14 * p.parallax;
-        const oy = -py * 14 * p.parallax;
+        const ox = -px * 4 * p.parallax;
+        const oy = -py * 4 * p.parallax;
         const cx = p.x + ox;
         const cy = p.y + oy;
 
