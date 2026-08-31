@@ -88,7 +88,7 @@ function ExperiencePage() {
       }
       intro="A mix of academic, creative, and community-facing experiences."
     >
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {items.map((it) => (
           <div
             key={it.title}
