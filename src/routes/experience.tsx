@@ -10,7 +10,7 @@ const ngoPhotos = [
   { src: ngo1.url, alt: "Rishav Kumar addressing village women during a Glad Bharat Foundation community session in Bodhgaya, Bihar" },
   { src: ngo2.url, alt: "Community awareness gathering with schoolchildren and villagers in Gaya, Bihar" },
   { src: ngo3.url, alt: "Rishav Kumar teaching students in a rural classroom in Bodhgaya, Bihar" },
-  { src: ngo4.url, alt: "Field work with the Glad Bharat Foundation education programme" },
+  { src: ngo4.url, alt: "Rishav Kumar with the Glad Bharat Foundation team addressing villagers and children gathered on a mat in Bodhgaya, Bihar" },
 ];
 
 
