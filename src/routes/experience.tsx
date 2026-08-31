@@ -35,6 +35,17 @@ export const Route = createFileRoute("/experience")({
 
 const items = [
   {
+    icon: HeartHandshake,
+    title: "Internship — Glad Bharat Foundation (NGO)",
+    period: "Bihar · Rural Education",
+    bullets: [
+      "Worked on grassroots education & rural development drives",
+      "Conducted village awareness sessions with parents and children",
+      "Taught and mentored students in government schools",
+    ],
+  },
+  {
+
     icon: GraduationCap,
     title: "Teaching Experience",
     period: "Self-initiated",
