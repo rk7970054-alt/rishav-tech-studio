@@ -1,6 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "../components/PageShell";
-import { GraduationCap, Camera, FlaskConical, Trophy, Clock, ExternalLink } from "lucide-react";
+import { GraduationCap, Camera, FlaskConical, Trophy, Clock, ExternalLink, HeartHandshake } from "lucide-react";
+import ngo1 from "../assets/ngo/ngo-1.jpg.asset.json";
+import ngo2 from "../assets/ngo/ngo-2.jpg.asset.json";
+import ngo3 from "../assets/ngo/ngo-3.jpg.asset.json";
+import ngo4 from "../assets/ngo/ngo-4.jpg.asset.json";
+
+const ngoPhotos = [
+  { src: ngo1.url, alt: "Rishav Kumar addressing village women during a Glad Bharat Foundation community session in Bodhgaya, Bihar" },
+  { src: ngo2.url, alt: "Community awareness gathering with schoolchildren and villagers in Gaya, Bihar" },
+  { src: ngo3.url, alt: "Rishav Kumar teaching students in a rural classroom in Bodhgaya, Bihar" },
+  { src: ngo4.url, alt: "Field work with the Glad Bharat Foundation education programme" },
+];
+
 
 export const Route = createFileRoute("/experience")({
   head: () => ({
