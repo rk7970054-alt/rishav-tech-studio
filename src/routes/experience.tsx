@@ -1,6 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "../components/PageShell";
-import { GraduationCap, Camera, FlaskConical, Trophy, Clock, ExternalLink } from "lucide-react";
+import { GraduationCap, Camera, FlaskConical, Trophy, Clock, ExternalLink, HeartHandshake } from "lucide-react";
+import ngo1 from "../assets/ngo/ngo-1.jpg.asset.json";
+import ngo2 from "../assets/ngo/ngo-2.jpg.asset.json";
+import ngo3 from "../assets/ngo/ngo-3.jpg.asset.json";
+import ngo4 from "../assets/ngo/ngo-4.jpg.asset.json";
+
+const ngoPhotos = [
+  { src: ngo1.url, alt: "Rishav Kumar addressing village women during a Glad Bharat Foundation community session in Bodhgaya, Bihar" },
+  { src: ngo2.url, alt: "Community awareness gathering with schoolchildren and villagers in Gaya, Bihar" },
+  { src: ngo3.url, alt: "Rishav Kumar teaching students in a rural classroom in Bodhgaya, Bihar" },
+  { src: ngo4.url, alt: "Field work with the Glad Bharat Foundation education programme" },
+];
+
 
 export const Route = createFileRoute("/experience")({
   head: () => ({
@@ -23,6 +35,17 @@ export const Route = createFileRoute("/experience")({
 
 const items = [
   {
+    icon: HeartHandshake,
+    title: "Internship — Glad Bharat Foundation (NGO)",
+    period: "Bihar · Rural Education",
+    bullets: [
+      "Worked on grassroots education & rural development drives",
+      "Conducted village awareness sessions with parents and children",
+      "Taught and mentored students in government schools",
+    ],
+  },
+  {
+
     icon: GraduationCap,
     title: "Teaching Experience",
     period: "Self-initiated",
@@ -65,7 +88,7 @@ function ExperiencePage() {
       }
       intro="A mix of academic, creative, and community-facing experiences."
     >
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {items.map((it) => (
           <div
             key={it.title}
@@ -87,6 +110,46 @@ function ExperiencePage() {
           </div>
         ))}
       </div>
+
+      {/* NGO internship spotlight */}
+      <div className="mt-14 glass-card rounded-2xl p-6 md:p-8">
+        <div className="flex items-start gap-4">
+          <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+            <HeartHandshake size={20} />
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-wider text-primary">Internship · Bihar</p>
+            <h2 className="mt-1 font-display text-2xl font-bold">Glad Bharat Foundation</h2>
+          </div>
+        </div>
+
+        <p className="mt-5 text-sm md:text-base text-foreground leading-relaxed">
+          Glad Bharat Foundation is a Bihar-based NGO working at the grassroots of rural
+          education and community development. During my internship I travelled to villages
+          around Bodhgaya and Gaya, running awareness sessions with parents, enrolling
+          out-of-school children, and teaching in government classrooms. The foundation works
+          through local volunteers, door-to-door surveys, remedial learning camps, hygiene and
+          nutrition drives, and skill sessions for women. Its quiet revolution lies in changing
+          mindsets — convincing families that a girl's education matters, that school attendance
+          builds futures. Dropout rates fell, classrooms filled up, and entire hamlets began
+          treating learning as a shared responsibility rather than a privilege.
+        </p>
+
+        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+          {ngoPhotos.map((p) => (
+            <div key={p.src} className="overflow-hidden rounded-xl border border-border">
+              <img
+                src={p.src}
+                alt={p.alt}
+                loading="lazy"
+                className="h-48 w-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+
 
       {/* Stats band */}
       <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
