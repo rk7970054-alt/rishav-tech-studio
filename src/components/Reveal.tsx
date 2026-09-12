@@ -32,7 +32,7 @@ export function Reveal({
     <div
       id={id}
       ref={ref}
-      className={`relative transition-all duration-700 ease-out will-change-transform ${
+      className={`reveal-section relative transition-all duration-700 ease-out will-change-transform ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
