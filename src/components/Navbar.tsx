@@ -3,14 +3,22 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/skills", label: "Skills" },
-  { to: "/experience", label: "Experience" },
-  { to: "/projects", label: "Projects" },
-  { to: "/swot", label: "SWOT" },
-  { to: "/contact", label: "Contact" },
+  { id: "top", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "swot", label: "SWOT" },
+  { id: "contact", label: "Contact" },
 ] as const;
+
+function scrollToSection(id: string) {
+  if (id === "top") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,15 +56,13 @@ export function Navbar() {
 
           <nav className="hidden md:flex items-center gap-1">
             {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
+              <button
+                key={l.id}
+                onClick={() => scrollToSection(l.id)}
                 className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground hover:bg-foreground/5"
-                activeProps={{ className: "rounded-lg px-3 py-2 text-sm text-foreground bg-foreground/8" }}
-                activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
-              </Link>
+              </button>
             ))}
           </nav>
 
@@ -81,16 +87,16 @@ export function Navbar() {
         {open && (
           <div className="md:hidden mt-2 glass-card rounded-2xl p-3 flex flex-col">
             {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-foreground/5"
-                activeProps={{ className: "rounded-lg px-3 py-2 text-sm text-foreground bg-foreground/8" }}
-                activeOptions={{ exact: l.to === "/" }}
+              <button
+                key={l.id}
+                onClick={() => {
+                  setOpen(false);
+                  scrollToSection(l.id);
+                }}
+                className="rounded-lg px-3 py-2 text-left text-sm text-muted-foreground hover:text-foreground hover:bg-foreground/5"
               >
                 {l.label}
-              </Link>
+              </button>
             ))}
           </div>
         )}

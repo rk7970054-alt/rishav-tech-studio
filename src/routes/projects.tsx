@@ -31,7 +31,7 @@ export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
 });
 
-function ProjectsPage() {
+export function ProjectsPage() {
   return (
     <PageShell
       eyebrow="Projects & Certifications"

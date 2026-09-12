@@ -12,6 +12,12 @@ import {
   Quote,
 } from "lucide-react";
 import portrait from "../assets/rishav-photo.jpg";
+import { AboutPage } from "./about";
+import { SkillsPage } from "./skills";
+import { ExperiencePage } from "./experience";
+import { ProjectsPage } from "./projects";
+import { SwotPage } from "./swot";
+import { ContactPage } from "./contact";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -236,6 +242,26 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* All sections in one long scroll */}
+      <div id="about">
+        <AboutPage />
+      </div>
+      <div id="skills">
+        <SkillsPage />
+      </div>
+      <div id="experience">
+        <ExperiencePage />
+      </div>
+      <div id="projects">
+        <ProjectsPage />
+      </div>
+      <div id="swot">
+        <SwotPage />
+      </div>
+      <div id="contact">
+        <ContactPage />
+      </div>
     </div>
   );
 }

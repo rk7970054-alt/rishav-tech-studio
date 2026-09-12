@@ -36,7 +36,7 @@ const timeline = [
   },
 ];
 
-function AboutPage() {
+export function AboutPage() {
   return (
     <PageShell
       eyebrow="About Me"

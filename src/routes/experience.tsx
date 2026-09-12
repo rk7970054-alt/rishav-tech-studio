@@ -77,7 +77,7 @@ const items = [
   },
 ];
 
-function ExperiencePage() {
+export function ExperiencePage() {
   return (
     <PageShell
       eyebrow="Experience"
