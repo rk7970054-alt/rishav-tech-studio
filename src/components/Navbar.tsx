@@ -23,11 +23,21 @@ function scrollToSection(id: string) {
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("top");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      let current = "top";
+      for (const l of links) {
+        if (l.id === "top") continue;
+        const el = document.getElementById(l.id);
+        if (el && el.getBoundingClientRect().top <= 160) current = l.id;
+      }
+      setActive(current);
+    };
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -59,9 +69,16 @@ export function Navbar() {
               <button
                 key={l.id}
                 onClick={() => scrollToSection(l.id)}
-                className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground hover:bg-foreground/5"
+                className={`relative rounded-lg px-3 py-2 text-sm transition-colors hover:text-foreground hover:bg-foreground/5 ${
+                  active === l.id ? "text-primary" : "text-muted-foreground"
+                }`}
               >
                 {l.label}
+                <span
+                  className={`absolute left-3 right-3 -bottom-0.5 h-0.5 rounded-full bg-[image:var(--gradient-primary)] transition-transform duration-300 origin-left ${
+                    active === l.id ? "scale-x-100" : "scale-x-0"
+                  }`}
+                />
               </button>
             ))}
           </nav>
@@ -93,7 +110,9 @@ export function Navbar() {
                   setOpen(false);
                   scrollToSection(l.id);
                 }}
-                className="rounded-lg px-3 py-2 text-left text-sm text-muted-foreground hover:text-foreground hover:bg-foreground/5"
+                className={`rounded-lg px-3 py-2 text-left text-sm hover:text-foreground hover:bg-foreground/5 ${
+                  active === l.id ? "text-primary bg-foreground/5" : "text-muted-foreground"
+                }`}
               >
                 {l.label}
               </button>
