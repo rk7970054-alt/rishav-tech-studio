@@ -23,11 +23,21 @@ function scrollToSection(id: string) {
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("top");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      let current = "top";
+      for (const l of links) {
+        if (l.id === "top") continue;
+        const el = document.getElementById(l.id);
+        if (el && el.getBoundingClientRect().top <= 160) current = l.id;
+      }
+      setActive(current);
+    };
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 

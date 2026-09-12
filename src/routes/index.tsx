@@ -245,24 +245,24 @@ function HomePage() {
       </section>
 
       {/* All sections in one long scroll */}
-      <div id="about">
+      <Reveal id="about">
         <AboutPage />
-      </div>
-      <div id="skills">
+      </Reveal>
+      <Reveal id="skills">
         <SkillsPage />
-      </div>
-      <div id="experience">
+      </Reveal>
+      <Reveal id="experience">
         <ExperiencePage />
-      </div>
-      <div id="projects">
+      </Reveal>
+      <Reveal id="projects">
         <ProjectsPage />
-      </div>
-      <div id="swot">
+      </Reveal>
+      <Reveal id="swot">
         <SwotPage />
-      </div>
-      <div id="contact">
+      </Reveal>
+      <Reveal id="contact">
         <ContactPage />
-      </div>
+      </Reveal>
     </div>
   );
 }
