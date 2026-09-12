@@ -57,7 +57,7 @@ const groups: Group[] = [
   },
 ];
 
-function SkillsPage() {
+export function SkillsPage() {
   return (
     <PageShell
       eyebrow="Skills & Expertise"

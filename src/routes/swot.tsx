@@ -127,7 +127,7 @@ const quadrants = [
   },
 ];
 
-function SwotPage() {
+export function SwotPage() {
   return (
     <PageShell
       eyebrow="SWOT Analysis"
