@@ -242,6 +242,26 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* All sections in one long scroll */}
+      <div id="about">
+        <AboutPage />
+      </div>
+      <div id="skills">
+        <SkillsPage />
+      </div>
+      <div id="experience">
+        <ExperiencePage />
+      </div>
+      <div id="projects">
+        <ProjectsPage />
+      </div>
+      <div id="swot">
+        <SwotPage />
+      </div>
+      <div id="contact">
+        <ContactPage />
+      </div>
     </div>
   );
 }
