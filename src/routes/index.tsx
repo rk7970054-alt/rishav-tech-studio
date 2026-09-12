@@ -12,6 +12,12 @@ import {
   Quote,
 } from "lucide-react";
 import portrait from "../assets/rishav-photo.jpg";
+import { AboutPage } from "./about";
+import { SkillsPage } from "./skills";
+import { ExperiencePage } from "./experience";
+import { ProjectsPage } from "./projects";
+import { SwotPage } from "./swot";
+import { ContactPage } from "./contact";
 
 export const Route = createFileRoute("/")({
   head: () => ({
