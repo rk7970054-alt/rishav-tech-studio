@@ -56,15 +56,13 @@ export function Navbar() {
 
           <nav className="hidden md:flex items-center gap-1">
             {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
+              <button
+                key={l.id}
+                onClick={() => scrollToSection(l.id)}
                 className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground hover:bg-foreground/5"
-                activeProps={{ className: "rounded-lg px-3 py-2 text-sm text-foreground bg-foreground/8" }}
-                activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
-              </Link>
+              </button>
             ))}
           </nav>
 
@@ -89,16 +87,16 @@ export function Navbar() {
         {open && (
           <div className="md:hidden mt-2 glass-card rounded-2xl p-3 flex flex-col">
             {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-foreground/5"
-                activeProps={{ className: "rounded-lg px-3 py-2 text-sm text-foreground bg-foreground/8" }}
-                activeOptions={{ exact: l.to === "/" }}
+              <button
+                key={l.id}
+                onClick={() => {
+                  setOpen(false);
+                  scrollToSection(l.id);
+                }}
+                className="rounded-lg px-3 py-2 text-left text-sm text-muted-foreground hover:text-foreground hover:bg-foreground/5"
               >
                 {l.label}
-              </Link>
+              </button>
             ))}
           </div>
         )}
