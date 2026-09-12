@@ -18,6 +18,7 @@ import { ExperiencePage } from "./experience";
 import { ProjectsPage } from "./projects";
 import { SwotPage } from "./swot";
 import { ContactPage } from "./contact";
+import { Reveal } from "../components/Reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
